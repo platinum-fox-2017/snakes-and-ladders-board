@@ -1,16 +1,18 @@
-function generateBoard(){
+function generateBoard(dimensi){
   var board = [];
   var boardPerbaris = [];
   var barisKe = 0;
-  for(var i = 100; i > 0; i--){
-    if(boardPerbaris.length < 10){
+  var dimensiSeluruhBoard = dimensi * dimensi;
+
+  for(var i = dimensiSeluruhBoard; i > 0; i--){
+    if(boardPerbaris.length < dimensi){
       boardPerbaris.push(i);
     }
-    if(boardPerbaris.length === 10){
+    if(boardPerbaris.length === dimensi){
       barisKe++;
       if(barisKe % 2 === 0){
         var boardPerbarisTerbalik = [];
-        for(var j = boardPerbaris.length - 1; j > 0; j-- ){
+        for(var j = boardPerbaris.length - 1 ; j >= 0; j-- ){
             boardPerbarisTerbalik.push(boardPerbaris[j]);
         }
         board.push(boardPerbarisTerbalik)
@@ -26,4 +28,4 @@ function generateBoard(){
 
 }
 
-console.log(generateBoard());
+console.log(generateBoard(10));
