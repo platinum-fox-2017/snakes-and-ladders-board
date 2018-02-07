@@ -55,4 +55,4 @@ function generateBoard(n){
 
 
 
-console.log(generateBoard(5));
+console.log(generateBoard(8));
