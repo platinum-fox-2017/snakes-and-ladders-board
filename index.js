@@ -54,7 +54,5 @@ function generateBoard(n){
 }
 
 
-function generateBoard(n){
-  
-}
+
 console.log(generateBoard(5));
