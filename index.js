@@ -1,6 +1,5 @@
-function generateBoard() {
-	let num = 10, 
-		result = [],
+function generateBoard(num) {
+	let result = [],
 		flag = false;
 
 	if (num % 2 == 0) flag = true;
@@ -25,4 +24,6 @@ function generateBoard() {
 	return result;
 }
 
-console.log(generateBoard());
+console.log(generateBoard(10));
+console.log(generateBoard(15));
+console.log(generateBoard(8));
