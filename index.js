@@ -5,27 +5,35 @@ function generateBoard(dimensi){
   var dimensiSeluruhBoard = dimensi * dimensi;
 
   for(var i = dimensiSeluruhBoard; i > 0; i--){
-    if(boardPerbaris.length < dimensi){
       boardPerbaris.push(i);
-    }
     if(boardPerbaris.length === dimensi){
       barisKe++;
-      if(barisKe % 2 === 0){
-        var boardPerbarisTerbalik = [];
-        for(var j = boardPerbaris.length - 1 ; j >= 0; j-- ){
-            boardPerbarisTerbalik.push(boardPerbaris[j]);
+      if(dimensi % 2 ===  0){
+        if(barisKe % 2 === 0){
+          var boardPerbarisTerbalik = [];
+          for(var j = boardPerbaris.length - 1 ; j >= 0; j-- ){
+              boardPerbarisTerbalik.push(boardPerbaris[j]);
+          }
+          board.push(boardPerbarisTerbalik)
+        } else {
+          board.push(boardPerbaris);
         }
-        board.push(boardPerbarisTerbalik)
-        
       } else {
-        board.push(boardPerbaris);
+        if(barisKe % 2 != 0){
+          var boardPerbarisTerbalik = [];
+          for(var j = boardPerbaris.length - 1 ; j >= 0; j-- ){
+              boardPerbarisTerbalik.push(boardPerbaris[j]);
+          }
+          board.push(boardPerbarisTerbalik)
+        } else {
+          board.push(boardPerbaris);
+        }
       }
       boardPerbaris = []
     }
-
   }
   return board;
 
 }
 
-console.log(generateBoard(10));
+console.log(generateBoard(5));
