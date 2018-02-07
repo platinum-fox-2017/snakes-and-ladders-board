@@ -15,23 +15,45 @@ function generateBoard(input){
       arr = []
     }
   }
-
-  for(var i=0; i<hasil.length; i++){
-    if(i % 2 === 0){
-      for(var j=0; j<hasil[i].length; j++){
-        temp.push(hasil[i][j])
+ //For Release 0
+  if(input % 2 === 0){
+    for(var i=0; i<hasil.length; i++){
+      if(i % 2 === 0){
+        for(var k=0; k<hasil[i].length; k++){
+          temp.push(hasil[i][k])
+        }
+        reverse.push(temp)
       }
-      reverse.push(temp)
-    }
-    else{
-      for(var k=hasil[i].length-1; k>=0; k--){
-        temp.push(hasil[i][k])
+      else{
+        for(var l=hasil[i].length-1; l>=0; l--){
+          temp.push(hasil[i][l])
+        }
+        reverse.push(temp)
       }
-      reverse.push(temp)
+      temp = []
     }
-    temp = []
-  }
     return reverse
-}
+  }
+  //For Release 1
+  else{
+    for(var i=0; i<hasil.length; i++){
+      if(i % 2 !== 0){
+        for(var k=0; k<hasil[i].length; k++){
+          temp.push(hasil[i][k])
+        }
+        reverse.push(temp)
+      }
+      else{
+        for(var l=hasil[i].length-1; l>=0; l--){
+          temp.push(hasil[i][l])
+        }
+        reverse.push(temp)
+      }
+      temp = []
+    }
+    return reverse
+  }
 
+}
 console.log(generateBoard(10))
+console.log(generateBoard(15))
