@@ -13,12 +13,12 @@ function generateBoard(row) {
     for (let x = row-1; x >= 0; x--) {
         if (count % 2 === 1) {
             for (let k = board[x].length-1; k >=0; k--) {
-                board[x][k] += num
+                board[x][k] = num
                 num++
             }
         }else if (count % 2 === 0){
             for (let l = 0; l < board[x].length; l++) {
-                board[x][l] += num
+                board[x][l] = num
                 num++
             }
         }
@@ -28,4 +28,4 @@ function generateBoard(row) {
 }
 
 console.log(generateBoard(10))
-// console.log(generateBoard(15))
+console.log(generateBoard(15))
